@@ -6,7 +6,7 @@ class paymentController {
   async realizarPagamento(req, res) { // realização do pagamento
     const { transaction_amount } = req.body;
     const payment = new Payment(client);
-
+    ss
     const body = {
       // transaction_amount: 20.10,
       description: '🌀 Deluxe package',
