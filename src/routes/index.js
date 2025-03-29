@@ -1,14 +1,16 @@
 const express = require('express');
-const configDotenv = require('dotenv');
+const paymentController = require('../controllers/paymentController');
+const cursosController = require('../controllers/cursosController');
 const router = express.Router();
+// const configDotenv = require('dotenv');
 
+// ## Pagamentos
+router.get('/', paymentController.verificarPagamento)
+router.post('/api/pagar', paymentController.realizarPagamento)
+router.put('/', paymentController.continuidadePagamento)
 
-router.get('/', (req, res) => )
+// ## Cursos
+router.post('/api/cursos/adicionar', cursosController.adicionar)
+router.delete('/api/cursos/deletar/:id', cursosController.deletar)
 
-router.post('/', (req, res) => {
-
-})
-
-router.put('/', (req, res) => {
-
-})
+module.exports = router

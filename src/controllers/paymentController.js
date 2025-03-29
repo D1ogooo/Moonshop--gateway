@@ -3,10 +3,14 @@ const client = require('../config/mercadopago');
 const configDotenv = require('dotenv');
 
 class paymentController {
+  async verificarPagamento(req, res) { // verificação de pagamento
+
+  }
+
   async realizarPagamento(req, res) { // realização do pagamento
     const { transaction_amount } = req.body;
     const payment = new Payment(client);
-    ss
+
     const body = {
       // transaction_amount: 20.10,
       description: '🌀 Deluxe package',
@@ -16,7 +20,14 @@ class paymentController {
       },
     };
 
-    payment.create({ body }).then(console.log).catch(console.log);
+    payment.create({
+      body
+    }).then(console.log)
+      .catch(console.log);
+  }
+
+  async continuidadePagamento(req, res) { // continuidade do pagamento
+
   }
 }
 
